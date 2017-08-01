@@ -23,6 +23,7 @@ class App
 		echo "<p>App:".__LINE__."</p> Boot Method aufgerufen... <br />";
 		$this->validatePage();
 
+
 		switch ($_GET['p'] ?? ''){
 			case 'users':
 				echo "<p>App:".__LINE__."</p> Users page ist aktiv <br />";
@@ -40,6 +41,11 @@ class App
 
 	public function validatePage()
 	{
+		// Example but not complete
+		if(!isset($_GET['p'])){
+			$_GET['p'] = '';
+		}
+
 		echo "<p>App:".__LINE__."</p> Page Parameter wurde validiert <br />";
 	}
 }
